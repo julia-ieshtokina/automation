@@ -1,0 +1,28 @@
+{
+  "name": "ps-automation",
+  "version": "1.0.0",
+  "description": "automation engineer coding exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "wdio"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julia-ieshtokina/ps-automation.git"
+  },
+  "author": "Julia Ieshtokina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/julia-ieshtokina/ps-automation/issues"
+  },
+  "homepage": "https://github.com/julia-ieshtokina/ps-automation#readme",
+  "devDependencies": {
+    "wdio-mocha-framework": "^0.6.3",
+    "wdio-selenium-standalone-service": "0.0.10",
+    "wdio-spec-reporter": "^0.1.5",
+    "webdriverio": "^4.14.0"
+  },
+  "dependencies": {
+    "chai": "^4.2.0"
+  }
+}
