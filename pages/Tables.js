@@ -16,6 +16,7 @@ class Tables extends Page {
 
     get titles() {
         const titles = [];
+        // get actual text of headers nodes
         this.headers.forEach(head => titles.push(head.getText()));
         return titles;
     }
@@ -25,11 +26,12 @@ class Tables extends Page {
 
         // extract text for all cells on the page
         let cells = browser.elements('//table[@id="table1"]//tbody//tr//td').getText();
-        
+        const length = cells.length;
+        const rowLength = this.titles.length;
         // push cell values into the row array based on the row length
         // push a single row into rows array
-        for(let i = 0; i < cells.length; i += 6) {
-            const row = cells.slice(i, i + 6);
+        for(let i = 0; i < length; i += rowLength) {
+            const row = cells.slice(i, i + rowLength);
             rows.push(row);
         }
         return rows;
@@ -38,6 +40,8 @@ class Tables extends Page {
     column(header) {  
                 
         const column = [];
+
+        // find index of the specified header in titles array
         const index = this.titles.indexOf(header);
 
         // get all the elements from rows at header index

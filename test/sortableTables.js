@@ -12,17 +12,17 @@ describe('Sortable Table Test', function () {
     describe('Sorting data in ascending and descending order', () => {
         
         it('by last name', () => {
-                const header = 'Last Name';
-                const columnToCheck = Tables.column(header);
+            const header = 'Last Name';
+            const columnToCheck = Tables.column(header);
 
-                Tables.clickHeader(header);
-                const sortedAsc = Tables.column(header);
+            Tables.clickHeader(header);
+            const sortedAsc = Tables.column(header);
                 
-                Tables.clickHeader(header);
-                const sortedDesc = Tables.column(header);
+            Tables.clickHeader(header);
+            const sortedDesc = Tables.column(header);
 
-                expect(compareArrays(sortedAsc, sortAsc(columnToCheck))).to.be.true;
-                expect(compareArrays(sortedDesc, sortDesc(columnToCheck))).to.be.true;
+            expect(compareArrays(sortedAsc, sortAsc(columnToCheck))).to.be.true;
+            expect(compareArrays(sortedDesc, sortDesc(columnToCheck))).to.be.true;
         });
 
         it('by first name', () => {
@@ -53,7 +53,7 @@ describe('Sortable Table Test', function () {
             expect(compareArrays(sortedDesc, sortDesc(columnToCheck))).to.be.true;
         });
 
-        it('amount due', () => {
+        it('by amount due', () => {
             const header = 'Due';
             let columnToCheck = extractNumbers(Tables.column(header));
 
@@ -67,7 +67,7 @@ describe('Sortable Table Test', function () {
             expect(compareArrays(sortedDesc, sortDesc(columnToCheck))).to.be.true;
         });
 
-        it('website', () => {
+        it('by website', () => {
             const header = 'Web Site';
             let columnToCheck = Tables.column(header);
 
