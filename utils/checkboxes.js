@@ -27,6 +27,6 @@ function clickCheckboxes() {
 }
 
 clickCheckboxes();
-// browser.end();
+setTimeout(() => browser.end(), 5000);
 
 module.exports = clickCheckboxes;

@@ -23,6 +23,6 @@ const scrollTimes = Math.ceil(Math.random() * 5);
 console.log(`page will be scrolled ${scrollTimes} time(s)`);
 
 scrollInfinite(scrollTimes, count = 0);
-// browser.end();
+setTimeout(() => browser.end(), 10000);
 
 module.exports = scrollInfinite;

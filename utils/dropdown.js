@@ -14,11 +14,12 @@ function selectRandomOption() {
         let index = Math.ceil(Math.random() * options.value.length);
         browser.element(`//*[@id="dropdown"]/option[not(@disabled="disabled")][${index}]`).click();
         console.log(`option ${index} is selected`);
+        browser.element('#dropdown').click(); // to close dropdown list
     })
     .catch(e => console.log(e));      
 }
 
 selectRandomOption();
-// browser.end();
+setTimeout(() => browser.end(), 5000);
 
 module.exports = selectRandomOption;
